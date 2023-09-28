@@ -1,0 +1,63 @@
+html, body {
+    margin: 0;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template-areas:
+            "text1 text1 text1 text1"
+            "img1 img1 img1 img1"
+            "img2 img2 img2 text2";
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-auto-rows: 1fr 1fr 4fr;
+}
+
+.container > div {
+    overflow: hidden;
+}
+
+.text1 {
+    grid-area: text1;
+    background-color: rgba(100, 149, 237, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img1 {
+    grid-area: img1;
+    background-color: rgba(255, 182, 193, 0.8);
+}
+
+.img1 img,
+.img2 img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img2 {
+    grid-area: img2;
+    background-color: rgba(32, 178, 170, 0.6);
+}
+
+.img2 img {
+    object-position: 0 100%;
+}
+
+.text2 {
+    grid-area: text2;
+    background-color: rgba(0, 100, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text2 h1 {
+    transform: translateY(-100px);
+}
